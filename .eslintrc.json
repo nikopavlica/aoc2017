@@ -1,0 +1,10 @@
+{
+    "extends": [
+        "recommended/node"
+    ],
+    "rules": {
+        "no-console": "off",
+        "prefer-const": "warn",
+        "array-callback-return": "warn"
+    }
+}
