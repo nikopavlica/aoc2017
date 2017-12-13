@@ -27,24 +27,30 @@ function sanitize(aa) {
 
 function doMagic(input) {
     // it's a kind of maagiiiic
-    const scannerLevels = [];
-    input.forEach(([level, range]) => {
-        scannerLevels[level] = range;
+    const calculations = [];
+
+    // sort the input so that definition with lowest range are at the beginning (so we fail fast)
+    input.sort((a, b) => {
+        return a[1] - b[1];
     });
 
+    input.forEach(([level, range]) => {
+        let modus = (2 * range - 2)
+        calculations.push((seconds) => (seconds + level) % modus === 0)
+    });
+    
     let delayedSeconds = 0;
+    const itsEvenPossibleToComplete = c => c(delayedSeconds);
+
+    let d = Date.now();
     while (true) {
-        if (!getsCaught(scannerLevels, delayedSeconds)) {
+        if (!calculations.some(itsEvenPossibleToComplete)) {
             break;
         }
         delayedSeconds++;
     }
 
-    console.log(delayedSeconds);
-}
-
-function getsCaught(scannerLevels, delayedSeconds) {
-    return scannerLevels.some((limit, packetLoc) => limit && (packetLoc + delayedSeconds) % (2 * limit - 2) === 0);
+    console.log('delayed seconds:', delayedSeconds, 'ms required:', Date.now() - d);
 }
 
 run();
