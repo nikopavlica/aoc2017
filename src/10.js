@@ -10,7 +10,6 @@ function createList(num) {
 
 function solveStuff(lengths, itemsCnt) {
     let list = createList(itemsCnt);
-    // console.log(lengths);
 
     let ix = 0;
     let skipCnt = 0;
@@ -55,7 +54,7 @@ function solveStuff(lengths, itemsCnt) {
     // TODO: create dense hash
     const condensed = getDenseHash(list);
 
-    console.log(condensed);
+    return condensed;
 }
 
 function getDenseHash(input) {
@@ -82,7 +81,6 @@ function getDenseHash(input) {
 function stringToArrayOfAsciiCodes(str) {
     const r = [];
 
-    console.log(str.length);
     for (let i = 0; i < str.length; i++) {
         r[i] = str.charCodeAt(i);
     }
@@ -94,3 +92,8 @@ function stringToArrayOfAsciiCodes(str) {
 // solveStuff(stringToArrayOfAsciiCodes("1,2,3"), 255);
 solveStuff(stringToArrayOfAsciiCodes("165,1,255,31,87,52,24,113,0,91,148,254,158,2,73,153"), 255);
 // solveStuff(stringToArrayOfAsciiCodes(""), 255);
+
+
+module.exports = function(input) {
+    return solveStuff(stringToArrayOfAsciiCodes(input), 255);
+};
