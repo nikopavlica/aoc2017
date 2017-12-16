@@ -26,14 +26,14 @@ function doMagic(input) {
     function nextAVal(v) {
         do {
             v = v * factorA % 2147483647 
-        } while (v % 4 !== 0);
+        } while ((v & 3) !== 0);
         return v;
     }
 
     function nextBVal(v) {
         do {
             v = v * factorB % 2147483647;
-        } while (v % 8 !== 0);
+        } while ((v & 7) !== 0);
         return v;
     }
 
