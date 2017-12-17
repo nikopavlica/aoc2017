@@ -62,6 +62,7 @@ function dance(input, str) {
 function doMagic(danceMoves, positions) {
     let newPositions = positions;
     const positionsHash = {};
+    const storedPositions = {};
     let loopSize;
     let i = 1;
     let target = 1000000000;
@@ -73,17 +74,19 @@ function doMagic(danceMoves, positions) {
             break;
         } else {
             positionsHash[newPositions] = i;
+            storedPositions[i] = newPositions;
         }
         i++;
     }
 
     if (loopSize) {
         let b = (target % loopSize);
-        newPositions = positions;
-        for (let j = 0; j < b; j++) {
-            newPositions = dance(danceMoves, newPositions);
+        newPositions = storedPositions[b];
+        // newPositions = positions;
+        // for (let j = 0; j < b; j++) {
+            // newPositions = dance(danceMoves, newPositions);
             // console.log(target - (b - j - 1), newPositions);
-        }
+        // }
     }
     return newPositions;
 }
