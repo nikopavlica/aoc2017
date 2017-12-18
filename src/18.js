@@ -62,7 +62,7 @@ class Program {
 
         this.next = function(targetProgram) {
             if (terminated) return 0;
-            
+
             let stepsTaken = 0;
             while (commandIx < commands.length && commandIx >= 0) {
                 const {cmd, reg, val} = commands[commandIx];
@@ -94,7 +94,7 @@ class Program {
                         break;
                     case 'jgz': {
                         let v = getVal(val);
-                        if (getVal(reg) && v) {
+                        if (getVal(reg) > 0 && v) {
                             commandIx += v - 1
                         }
                         break;
