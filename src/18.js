@@ -35,7 +35,7 @@ function sanitize(aa) {
             let [c, reg, val] = cmd.split(' ')
             return {
                 cmd: c,
-                reg: val !== undefined ? parseInt(reg, 10) || reg : null,
+                reg: reg !== undefined ? parseInt(reg, 10) || reg : null,
                 val: val !== undefined ? parseInt(val, 10) || val : null
             }
         });
