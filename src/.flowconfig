@@ -1,0 +1,14 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+all=true
+experimental.const_params=true
+module.use_strict=true
+
+[strict]

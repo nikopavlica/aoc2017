@@ -3,17 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "1.js",
-  "dependencies": {},
+  "dependencies": {
+    "flow-remove-types": "^1.2.3"
+  },
   "devDependencies": {
-    "eslint": "^4.12.1",
-    "eslint-config-recommended": "^1.5.0",
-    "prettier": "^1.9.1"
+    "eslint": "^5.9.0",
+    "eslint-config-recommended": "^4.0.0",
+    "prettier": "^1.15.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "aoc2017"
+    "aoc2017",
+    "aoc2018"
   ],
   "author": "Niko Pavlica",
   "license": "MIT"

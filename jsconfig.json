@@ -1,7 +1,10 @@
 {
     "compilerOptions": {
-        "target": "ES6",
-        "checkJs": true
+        "target": "es6",
+        "module": "commonjs",
+        "experimentalDecorators": true
     },
-    "include": ["src/**/*"]
+    "include": [
+        "src/2018/"
+    ]
 }

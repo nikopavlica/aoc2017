@@ -12,7 +12,7 @@ const input = "29917128875332952564321392569634257121244516819997569284938677239
 function weirdSum(str) {
 
 	let numerals = str.split('');
-	let prevNum = numerals[numerals.length -1];
+	let prevNum = numerals[numerals.length - 1];
 	console.log(numerals);
 	return numerals.reduce((s, num) => {
 		let res = s;
